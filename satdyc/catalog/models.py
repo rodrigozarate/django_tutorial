@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from django.urls import reverse
 
 # Create your models here.
 
@@ -56,6 +57,14 @@ class Book(models.Model):
         URL de la instancia de Book
         """
         return reverse('book-detail', args=[str(self.id)])
+
+    def display_genre(self):
+        """
+        String for genre
+        """
+        return ', '.join([genre.name for genre in self.genre.all()[:3] ])
+    display_genre.short_description = 'Genre'
+
 
 class BookInstance(models.Model):
     """

@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<title>Libreria</title>{% endblock %}
+{% block content %}
+<h1>Libreria</h1>
+<p>Mis libros</p>
+<h2>Contenido</h2>
+<p>Conteo</p>
+<ul>
+<li><strong>Libros:</strong> {{ num_books }}</li>
+<li><strong>Copias:</strong> {{ num_instances }}</li>
+<li><strong>Disponibles:</strong> {{ num_instances_available }}</li>
+<li><strong>Géneros:</strong> {{ num_genres }}</li>
+<li><strong>Autores:</strong> {{ num_authors }}</li>
+</ul>
+{% endblock %}
